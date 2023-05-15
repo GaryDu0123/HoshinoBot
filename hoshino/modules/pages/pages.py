@@ -10,8 +10,8 @@ import markdown
 import json
 import datetime
 
-public_address = "127.0.0.1"  # 修改为服务器公网ip
-SERVICE_MODE = 0  # 1为服务模式，即读取插件名字和插件help
+public_address = "114.132.49.172"  # 修改为服务器公网ip
+SERVICE_MODE = 2  # 1为服务模式，即读取插件名字和插件help
 # 2为读取bundle模式
 # 0则读取modules文件夹下插件名字以及对应的user readme或readme
 INVISIBLE = True  # SERVICE_MODE下隐藏visible属性为false的service
@@ -31,7 +31,8 @@ sv = Service(
     help_=sv_help  # 帮助文本
 )
 
-
+#@sv.on_prefix('help', '帮助')
+#@sv.on_suffix('help', '帮助')
 @sv.on_fullmatch(["帮助网页端"])
 async def bangzhu(bot, ev):
     await bot.send(ev, sv_help, at_sender=True)
@@ -61,11 +62,12 @@ async def index():
             check_module_latest()
     return await render_template('help.html', services=service_help, SERVICE_MODE=SERVICE_MODE, latest=latest_help)
 
-
+@sv.on_prefix('help', '帮助')
+@sv.on_suffix('help', '帮助')
 @sv.on_fullmatch("帮助网页版", only_to_me=False)
 async def get_uploader_url(bot, ev):
     cfg = config.__bot__
-    await bot.send(ev, f'http://{public_address}:{cfg.PORT}/bot/help')
+    await bot.send(ev, f'https://bot.kirasalt.fun/bot/help')
 
 
 @sv.on_prefix("设置最新服务")
