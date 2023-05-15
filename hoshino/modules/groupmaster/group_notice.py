@@ -17,7 +17,7 @@ async def leave_notice(session: NoticeSession):
         name = util.filt_message(name)
     except CQHttpError as e:
         sv1.logger.exception(e)
-    await session.send(f"{name}({ev.user_id})退群了。")
+    await session.send(f"{name}({ev.user_id})润了...")
 
 
 sv2 = Service('group-welcome', help_='入群欢迎')
