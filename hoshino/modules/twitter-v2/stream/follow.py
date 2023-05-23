@@ -18,12 +18,12 @@ from .util import cut_list, format_tweet
 
 service_collection = [
     Service("twitter-stream-test", enable_on_default=False, manage_priv=priv.SU, visible=False),
-    Service("kc-twitter", help_="艦これ推特转发", enable_on_default=False, bundle="kancolle"),
+    # Service("kc-twitter", help_="艦これ推特转发", enable_on_default=False, bundle="kancolle"),
     Service("pcr-twitter", help_="日服Twitter转发", enable_on_default=True, bundle="pcr订阅"),
     # Service("uma-twitter", help_="ウマ娘推特转发", enable_on_default=False, bundle="umamusume"),
     Service("ba-twitter", help_="蔚蓝档案日服推特转发", enable_on_default=False, bundle="ba"),
     Service("sr-twitter", help_="崩坏星穹铁道日服推特转发", enable_on_default=False, bundle="mihoyo"),
-    Service("zzz-twitter", help_="绝区零日服推特转发", enable_on_default=False, bundle="mihoyo"),
+    # Service("zzz-twitter", help_="绝区零日服推特转发", enable_on_default=False, bundle="mihoyo"),
     # Service("pripri-twitter", help_="番剧《公主代理人》官推转发", enable_on_default=False),
     # Service("coffee-favorite-twitter", help_="咖啡精选画师推特转发", enable_on_default=False, bundle="artist"),
     Service("moe-artist-twitter", help_="萌系画师推特转发", enable_on_default=False, bundle="artist"),
